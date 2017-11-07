@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Maze
+comment1.params=rows\ cols\ map
+comment1.target=Maze(int,\ int,\ int[][])
+comment2.params=
+comment2.target=void\ draw()
+comment2.text=\n\ \ \ This\ method\ draws\ the\ current\ state\ of\ the\ maze\ to\ the\ canvas.\n\ \ \ Leave\ the\ method\ alone.\n
+comment3.params=row\ col
+comment3.target=boolean\ isValid(int,\ int)
+comment4.params=row\ col
+comment4.target=boolean\ isExit(int,\ int)
+comment5.params=row\ col
+comment5.target=boolean\ findPath(int,\ int)
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7
