@@ -32,7 +32,7 @@ public class Maze
 
     private boolean isValid(int row, int col)
     {
-        if(row < board.length && col < board[0].length){
+        if(row >= 0 && col >= 0 && row < board.length && col < board[0].length){
             if(board[row][col].isWall()){
                 return false;
             }
@@ -57,7 +57,33 @@ public class Maze
 
     public boolean findPath(int row, int col)
     {
-        return false;
+        boolean flag = false; 
+        if(this.isValid(row,col)){
+            board[row][col].visitCell();
+            draw();
+            StdDraw.pause(DELAY);
+            if(this.isExit(row,col)){
+                flag = true;
+                board[row][col].visitCell();
+                board[row][col].becomePath();
+            }
+            else{
+                flag = this.findPath(row,col+1);
+                if(!flag){
+                    flag = this.findPath(row+1,col);
+                }
+                if(!flag){
+                    flag = this.findPath(row-1,col);
+                }
+                if(!flag){
+                    flag = this.findPath(row,col-1);
+                }
+            }
+            if(flag){
+                board[row][col].becomePath();
+            }
+        }
+        return flag;
     }
 
     public static void main(String[] args) {
